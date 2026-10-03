@@ -1,0 +1,17 @@
+services:
+
+  registration:
+    build: ./Registration
+    container_name: registration-service
+    ports:
+      - "6001:5001"
+    env_file:
+      - ./Registration/.env
+
+  login:
+    build: ./Login
+    container_name: login-service
+    ports:
+      - "6002:5002"
+    env_file:
+      - ./Login/.env
