@@ -1,7 +1,9 @@
 services:
 
   registration:
-    build: ./Registration
+  build:
+    context: ./Registration
+    dockerfile: Dockerfile
     container_name: registration-service
     ports:
       - "6001:5001"
@@ -9,7 +11,9 @@ services:
       - ./Registration/.env
 
   login:
-    build: ./Login
+    build:
+      context: ./Login
+      dockerfile: Dockerfile
     container_name: login-service
     ports:
       - "6002:5002"
